@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 function Header() {
   return (
@@ -10,13 +11,13 @@ function Header() {
             </div>
             <div id="user-nav">
                 <div id="user">
-                    <div class="profile">
+                    <div className="profile">
                         <h3>Username<br/><span>Vu le 01/01/2024</span></h3>
-                        <div class="imgBx">
+                        <div className="imgBx">
                             <img src={require("../img/user.png")} alt="Profil du user" />
                         </div>
                     </div>
-                    <div class="menu">
+                    <div className="menu">
                         <ul>
                             <li><a href="connexion.html"><ion-icon name="log-in-outline"></ion-icon>Connexion</a></li>
                             <li><a href="inscription.html"><ion-icon name="person-add-outline"></ion-icon>Inscription</a></li>
@@ -28,9 +29,9 @@ function Header() {
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html" class="active">Accueil</a></li>
-                        <li><a href="panier.html" class="">Panier (<span id="nav-panier">0</span>)</a></li>
-                        <li><a href="#" class="">Contact</a></li>                        
+                        <li><NavLink to="/" className={({isActive}) => (isActive ? 'active' : '')}>Accueil</NavLink></li>
+                        <li><NavLink to="/panier" className={({isActive}) => (isActive ? 'active' : '')}>Panier (<span id="nav-panier">0</span>)</NavLink></li>
+                        <li><a href="#" className="">Contact</a></li>                        
                     </ul>
                 </nav>
             </div>
@@ -44,7 +45,7 @@ function Header() {
                 <marquee behavior direction>
                 Livraison partout au Mali. Satisfait ou remboursé sur 3 jours !
                 </marquee>
-                <a href="produits.html" class="bouton_rouge">Voir les produits <img src="img/icons/fleche.png" alt="" /></a>
+                <a href="produits.html" className="bouton_rouge">Voir les produits <img src="img/icons/fleche.png" alt="" /></a>
             </div>
         </div>
     </header>
