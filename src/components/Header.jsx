@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-function Header() {
+function Header({panier}) {
   return (
     <header>
         <div id="header-top">
@@ -30,7 +30,7 @@ function Header() {
                 <nav>
                     <ul>
                         <li><NavLink to="/" className={({isActive}) => (isActive ? 'active' : '')}>Accueil</NavLink></li>
-                        <li><NavLink to="/panier" className={({isActive}) => (isActive ? 'active' : '')}>Panier (<span id="nav-panier">0</span>)</NavLink></li>
+                        <li><NavLink to="/panier" className={({isActive}) => (isActive ? 'active' : '')}>Panier (<span id="nav-panier">{panier.length}</span>)</NavLink></li>
                         <li><a href="#" className="">Contact</a></li>                        
                     </ul>
                 </nav>
