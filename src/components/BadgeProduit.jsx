@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function BadgeProduit({produit}) {
     return (
         <div className="produit-badge">
@@ -9,8 +11,8 @@ function BadgeProduit({produit}) {
                 <h3>{produit.prix} F</h3>
             </div>
             <div className="produit-bouton">
-                <button className="ajout-panier-btn" id="1">+Panier</button>
-                <button className="details-btn" id="1">Détails</button>
+                <button className="ajout-panier-btn">+Panier</button>
+                <Link to={`/details/${produit.id}`} className="details-btn">Détails</Link>
             </div>
         </div>
     )
