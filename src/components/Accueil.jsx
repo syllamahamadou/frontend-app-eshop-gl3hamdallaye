@@ -1,9 +1,11 @@
 import React from 'react'
 import { produits } from '../dataTest/produits'
 import BadgeProduit from './BadgeProduit'
+import {useState} from 'react'
 
 function Accueil() {
-  return (
+    
+  return ( 
     <main>
         <section id="produits">
             <div id="produits-liste">
@@ -19,7 +21,9 @@ function Accueil() {
             <form>
                 <div className="form-group">
                     <label for="nom">Produit:</label>
-                    <input type="research" className="form-control" name="nom" id="nom" placeholder="Que cherchez-vous?" />
+                    <input type="research" className="form-control" name="nom" id="nom" placeholder="Que cherchez-vous?" 
+                    onChange={handleFilterChange}
+                    value={filters.cat}/>
                 </div>
                 <div className="form-group">
                     <label for="cat">Categorie:</label>
